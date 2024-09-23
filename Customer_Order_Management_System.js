@@ -68,8 +68,8 @@ console.log("Total price of the order: $" + calculateOrderTotal(itemsOrdered));
 // I tried my best with trial and error to get this to work and I can't figure it out, and this is what I came up with.
 
 function completeOrder(customerName) {
-    let order = orders.find(order => orders.customerName === customerName);
-        orders.status = "Completed";
+    let order = orders.find(order => orders.customerName === customerName); {
+        orders.status = "Completed"; }
     if (order) {
         orders.status = "Completed";
         console.log(`Order for ${customerName} has been completed.`);
@@ -80,3 +80,18 @@ function completeOrder(customerName) {
 
 completeOrder("James"); 
 
+// Create a Function to Check Pending Orders
+
+function checkPendingOrders() {
+    const pendingOrders = orders.filter(order => order.status === "Pending");
+    
+    if (pendingOrders.length <= 1) {
+        console.log("No pending orders.");
+    } else {
+        console.log("Pending Orders:");
+        pendingOrders.forEach((order) => {
+            console.log(`Customer: ${order.customerName}, Total: $${order.total}`);
+        });
+    }
+}
+checkPendingOrders();
