@@ -63,4 +63,20 @@ function calculateOrderTotal(itemsOrdered) {
 
 console.log("Total price of the order: $" + calculateOrderTotal(itemsOrdered));
 
-// 
+// Create a Function to Mark an Order as Completed
+
+// I tried my best with trial and error to get this to work and I can't figure it out, and this is what I came up with.
+
+function completeOrder(customerName) {
+    let order = orders.find(order => orders.customerName === customerName);
+        orders.status = "Completed";
+    if (order) {
+        orders.status = "Completed";
+        console.log(`Order for ${customerName} has been completed.`);
+    } else {
+        console.log(`No order found for ${customerName}.`);
+    }
+}
+
+completeOrder("James"); 
+
